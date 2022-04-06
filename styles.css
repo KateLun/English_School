@@ -12,13 +12,14 @@
 }
 .content{
     margin: auto;
-    width: 1024px;
+    max-width: 1024px;
     box-sizing: border-box;   
 }
 
 .navigation{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -105,7 +106,7 @@ a:hover{
     flex-direction: column;
     align-items: center;
     background-color: #fafaf9;
-    width: 310px;
+    width: calc(100% / 3 - 20px);
     height: max-content;
     border-radius: 10px;
     box-sizing: border-box;
@@ -152,11 +153,11 @@ a:hover{
     padding-bottom: 10px;
 }
 .about-company-people{
-    width: 500px;
+    max-width: 500px;
     margin-left: 15px;
 }
 .people{
-    width: 500px;
+    max-width: 500px;
 }
 
 .free-lesson{
@@ -194,7 +195,7 @@ input:focus{
     height: max-content;
 }
 .reviews__content{
-    width: 650px;
+    max-width: 650px;
     padding-bottom: 80px;
     margin: auto;
     display: flex;
@@ -222,18 +223,20 @@ input:focus{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     margin-top: 15px;
     margin-bottom: 80px;
 }
 .prices__item{
     background-color: white;
-    width: 310px;
-    height: max-content;
+    width: calc(100% / 3 - 20px);
     border: 1px solid #d6d3d1;
     border-radius: 10px;
     box-sizing: border-box;
     margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .prices__item-period{
     font-size: 18px;
@@ -269,13 +272,15 @@ ul li:before {
     background-color:  var(--light-orange-color);
     border-radius: 10px;
     padding: 10px 80px;
+    margin-top: 30px;
     margin-bottom: 25px;
     margin-left: 20px;
+    margin-right: 20px;
     border: none;
 }
-.knopka-one{margin-top: 75px;}
+/*.knopka-one{margin-top: 75px;}
 .knopka-two{margin-top: 48px;}
-.knopka-three{margin-top: 21px;}
+.knopka-three{margin-top: 21px;}*/
 
 .prices__item-knopka:hover{
     background-color: #fed7aa;
@@ -310,4 +315,53 @@ ul li:before {
 .fa-facebook-square{
     padding-left: 12px;
     padding-right: 12px;
+}
+
+@media(max-width:600px) {
+    .about-company__advantage{
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .advantage-item{
+        width: calc(100% / 1 - 20px);
+    }
+    .about-company__text-foto{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-company-people{
+        max-width: 250px;
+    }
+    .people{
+        max-width: 250px;
+    }
+    .prices__content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .prices__item{
+        width: calc(100% / 1 - 20px);
+    }
+    .free-lesson__form{
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-left__h{
+        font-size: 25px;
+    }
+    .about-company__text{
+        width: 90%;
+    }
+    input{
+        width: 90%;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .reviews__content{
+        padding: 10px;
+    }
+    .contacts{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
 }
